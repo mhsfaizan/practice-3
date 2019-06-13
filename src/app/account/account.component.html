@@ -1,0 +1,9 @@
+<div class="card mt-4">
+  <div class="card-header">{{account.name}}</div>
+  <div class="card-body">
+    <p>This account is {{account.status}}</p>
+    <button class="btn btn-outline-dark" (click)="setTo('active')">Set to 'active'</button>&nbsp;
+    <button class="btn btn-outline-dark" (click)="setTo('inactive')">Set to 'inactive'</button>&nbsp;
+    <button class="btn btn-outline-dark" (click)="setTo('unknown')">Set to 'unknown'</button>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br><br>
+      <h1>Create Account</h1>
+      <app-new-account (accountCreated)="accountCreated($event)"></app-new-account>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <br>
+      <button class="btn btn-success" (click)="getLogs()">Get Logs</button>&nbsp;
+      <button class="btn btn-danger" *ngIf="logs.length" (click)="clearLog()">Clear Logs</button>
+      <div class="card mt-4" *ngIf="logs.length">
+        <div class="card-header">All Logs</div>
+        <div class="card-body">
+            <app-log [log]="log" *ngFor="let log of logs"></app-log>
+        </div>
+      </div>
+      <app-account
+       [account]="account"
+       [id]="i" 
+       *ngFor="let account of accounts;let i=index"
+       (updateAccount)="update($event)" ></app-account>
+    </div>
+  </div>
+</div>
